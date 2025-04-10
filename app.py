@@ -88,18 +88,21 @@ def main():
             success = process_video(input_video_path, frame_dir, output_dir, output_video_path)
 
         if success:
+            # Read the processed video into bytes
+            with open(output_video_path, "rb") as file:
+                video_bytes = file.read()
+            
             # Display the processed video
             st.write("Processed video with detected lanes:")
-            st.video(output_video_path)
-
-            # Provide download link
-            with open(output_video_path, "rb") as file:
-                st.download_button(
-                    label="Download Processed Video",
-                    data=file,
-                    file_name="output_with_lanes.mp4",
-                    mime="video/mp4"
-                )
+            st.video(video_bytes, format="video/mp4")
+            
+            # Provide download link using the same bytes
+            st.download_button(
+                label="Download Processed Video",
+                data=video_bytes,
+                file_name="output_with_lanes.mp4",
+                mime="video/mp4"
+            )
 
         # Clean up temporary files and directories
         shutil.rmtree(frame_dir, ignore_errors=True)
