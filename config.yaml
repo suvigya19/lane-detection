@@ -1,0 +1,57 @@
+# lane2seq_project/configs/config.yaml
+
+# General
+seed: 2
+device: cuda  
+
+# Paths
+data_path: ../archive/TUSimple/train_set
+encoder_checkpoint: pretraining_vit/outputs/checkpoint-19280/  
+save_dir: checkpoints/
+log_file: logs/train.log
+
+# Augmentation
+augmentation:
+  probability: 0.3  # 50% of images get augmented
+  angle: 20        # degrees
+  translate: 0.1   # as fraction of image size
+  scale: 0.2       # ±20%
+
+
+# Training
+epochs: 50
+batch_size: 16
+learning_rate: 1e-4
+resume_from_checkpoint: null #checkpoints/best_model.pth  # path to checkpoint to resume or null
+save_best_only: true
+
+# Model
+image_size: [320, 800]
+vocab_size: 1007
+hidden_size: 256
+num_layers: 2
+num_heads: 8
+ff_size: 1024
+max_seq_length: 512
+
+
+# Optimizer
+optimizer: AdamW
+weight_decay: 0.01
+
+# Checkpoint saving
+save_every_epoch: true
+
+# Format type
+format_type: anchor
+
+# Inference settings
+inference:
+  data_path: ../archive/TUSimple/test_set/
+  checkpoint: "checkpoints/best_model.pth"
+  output_dir: "results/inference"
+
+# Evaluation settings
+evaluation:
+  ground_truth_dir: "../archive/TUSimple/test_set/test_label.json"
+  prediction_dir: "results/inference"
