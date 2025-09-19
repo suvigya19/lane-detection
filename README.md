@@ -77,6 +77,7 @@ After 15 epochs of supervised training on the TuSimple benchmark using the ancho
 These visual results demonstrate the model's ability to detect multiple lanes under diverse driving conditions.
 
 ## References
-- **Lane2Seq Paper**: Hu, X., Ma, L., Wei, H., Xie, D., & Liang, X. (2020). *Lane2Seq: Towards Unified Lane Detection via Sequence Generation*. [arXiv:2012.01629]([https://arxiv.org/abs/2012.01629](https://arxiv.org/pdf/2402.17172))
+- **Lane2Seq Paper**: Hu, X., Ma, L., Wei, H., Xie, D., & Liang, X. (2020). *Lane2Seq: Towards Unified Lane Detection via Sequence Generation*. [arXiv:2012.01629](https://arxiv.org/abs/2012.01629)
 - **TuSimple Lane Detection Benchmark**: [https://github.com/TuSimple/tusimple-benchmark](https://github.com/TuSimple/tusimple-benchmark)
+
 
