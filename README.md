@@ -1,6 +1,6 @@
 # Lane2Seq: Unified Lane Detection with Transformers
 
-Lane2Seq is a reimplementation of **Lane2Seq: Towards Unified Lane Detection via Sequence Generation**, a novel framework for lane detection. Instead of relying on traditional task-specific approaches like segmentation or curve fitting, Lane2Seq unifies these methods by casting lane detection as a sequence generation task. This avoids the need for complex task-specific head networks and loss functions typical of older methods. This repository contains the implementation of the Lane2Seq model for unified lane detection via sequence generation, as described in the paper: *Lane2Seq: Towards Unified Lane Detection via Sequence Generation* (Hu, X., Ma, L., Wei, H., Xie, D., & Liang, X., 2020).
+Lane2Seq is a reimplementation of **Lane2Seq: Towards Unified Lane Detection via Sequence Generation**, a novel framework for lane detection. Instead of relying on traditional task-specific approaches like segmentation or curve fitting, Lane2Seq unifies these methods by casting lane detection as a sequence generation task. This avoids the need for complex task-specific head networks and loss functions typical of older methods. 
 
 ---
 
@@ -16,7 +16,6 @@ Lane2Seq is a reimplementation of **Lane2Seq: Towards Unified Lane Detection via
 
 ## ⚙️ Getting Started
 
-### Prerequisites
 
 
 ## Installation
@@ -40,10 +39,9 @@ Edit `configs/config.yaml` to set paths, hyperparameters, and lane format. Key p
 Run the standard training script:
 
 ```bash
-python train.py
+python train1.py
 ```
 
-**Optional**: Use `train1.py` for advanced training with a learning rate scheduler and label smoothing.
 
 ### 3. Inference
 Run the model on the test set:
@@ -69,9 +67,12 @@ After 15 epochs of supervised training on the TuSimple benchmark using the ancho
 - **Recall**: 28.97%
 
 ### Example Predictions
-| Input Image | Predicted Lanes |
-|-------------|-----------------|
-| [Image]     | [Lanes]         |
+| Predicted Lanes |
+|-----------------|
+| ![](clips_0530_1492626153155598528_0_20.png) |
+| ![](clips_0530_1492626660847529842_0_20.png) |
+
+
 
 These visual results demonstrate the model's ability to detect multiple lanes under diverse driving conditions.
 
@@ -79,8 +80,3 @@ These visual results demonstrate the model's ability to detect multiple lanes un
 - **Lane2Seq Paper**: Hu, X., Ma, L., Wei, H., Xie, D., & Liang, X. (2020). *Lane2Seq: Towards Unified Lane Detection via Sequence Generation*. [arXiv:2012.01629](https://arxiv.org/abs/2012.01629)
 - **TuSimple Lane Detection Benchmark**: [https://github.com/TuSimple/tusimple-benchmark](https://github.com/TuSimple/tusimple-benchmark)
 
-These visual results demonstrate the model’s ability to detect multiple lanes under diverse driving conditions.
-References
-
-Lane2Seq Paper: Hu, X., Ma, L., Wei, H., Xie, D., & Liang, X. (2020). Lane2Seq: Towards Unified Lane Detection via Sequence Generation. arXiv:2012.01629
-TuSimple Lane Detection Benchmark: https://github.com/TuSimple/tusimple-benchmark
